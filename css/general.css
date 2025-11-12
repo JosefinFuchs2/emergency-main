@@ -67,12 +67,12 @@ h3 {
   font-size: var(--headline3-size);
 }
 
-main>h1 {
+main > h1 {
   width: calc(80% - 6rem);
 }
 
 /* NAVIGATION STRUCTURES */
-header>nav {
+header > nav {
   height: 100%;
   background-color: var(--color-menu-bg);
 }
@@ -99,7 +99,7 @@ nav a {
   height: 3.6rem;
 }
 
-#logotype-wrapper>a {
+#logotype-wrapper > a {
   color: var(--color-text-logotype);
   font-size: var(--font-logotype-size);
   font-weight: var(--font-weight-medium);
@@ -118,7 +118,7 @@ header nav li a {
 }
 
 /* Pilen efter menu-tekst */
-header>nav li>a:after {
+header > nav li > a:after {
   content: " \2192";
 }
 
