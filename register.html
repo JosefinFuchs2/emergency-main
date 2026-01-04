@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
     <link rel="stylesheet" href="css/cards.css" />
-    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/popup.css" />
     <link rel="icon" type="image/png" href="img/fav.png" />
     <title>Emergency Site</title>
   </head>
@@ -40,13 +41,166 @@
           <h2>Overskrift</h2>
           <p>Tekst</p>
         </article>
-        <form id="webform"></form>
+        <form id="webform">
+          <!-- SORT BAR MED H2 -->
+          <div class="form-title-bar">
+            <h2>Nærkontakt med Mørkegænger</h2>
+          </div>
+
+          <!-- PERSONLIGE OPLYSNINGER -->
+          <fieldset class="form-fieldset">
+            <legend class="visually-hidden">Dine oplysninger</legend>
+
+            <!-- 3 inputs på række -->
+            <div class="form-row form-row--3">
+              <div class="form-control">
+                <label for="contact-name">Dit navn</label>
+                <input
+                  id="contact-name"
+                  name="contact-name"
+                  type="text"
+                  placeholder="Eks. Anna Jensen"
+                  required
+                />
+              </div>
+
+              <div class="form-control">
+                <label for="contact-email">E-mail</label>
+                <input
+                  id="contact-email"
+                  name="contact-email"
+                  type="email"
+                  placeholder="Eks. anna@mail.dk"
+                  required
+                />
+              </div>
+
+              <div class="form-control">
+                <label for="contact-phone">Telefon</label>
+                <input
+                  id="contact-phone"
+                  name="contact-phone"
+                  type="tel"
+                  placeholder="Eks. 12 34 56 78"
+                />
+              </div>
+            </div>
+
+            <!-- fuldbredde-felt -->
+            <div class="form-row">
+              <div class="form-control">
+                <label for="incident-location">Sted for hændelse</label>
+                <input
+                  id="incident-location"
+                  name="incident-location"
+                  type="text"
+                  placeholder="Eks. Nørrebrogade, København"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- lille input + radioknapper -->
+            <div class="form-row form-row--split">
+              <div class="form-control">
+                <label for="incident-date">Dato for hændelse</label>
+                <input
+                  id="incident-date"
+                  name="incident-date"
+                  type="date"
+                  required
+                />
+              </div>
+
+              <fieldset class="form-control form-control--inline">
+                <legend>Er du i sikkerhed nu?</legend>
+                <div class="radio-group">
+                  <label class="radio-option">
+                    <input type="radio" name="safe-now" value="yes" required />
+                    <span>Ja</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="safe-now" value="no" />
+                    <span>Nej</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <!-- LYS BLÅ BOKS MED FLERE FELTER -->
+          <section class="form-subsection">
+            <h3>Nærkontakt – detaljer</h3>
+
+            <div class="form-row form-row--3">
+              <div class="form-control">
+                <label for="number-of-walkers">Antal Mørkegængere</label>
+                <input
+                  id="number-of-walkers"
+                  name="number-of-walkers"
+                  type="number"
+                  min="1"
+                  placeholder="Eks. 1"
+                />
+              </div>
+
+              <div class="form-control">
+                <label for="distance">Afstand (meter)</label>
+                <input
+                  id="distance"
+                  name="distance"
+                  type="number"
+                  min="0"
+                  placeholder="Eks. 10"
+                />
+              </div>
+
+              <div class="form-control">
+                <label for="duration">Varighed (minutter)</label>
+                <input
+                  id="duration"
+                  name="duration"
+                  type="number"
+                  min="0"
+                  placeholder="Eks. 5"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-control form-control--full">
+                <label for="description">Beskriv hændelsen kort</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="3"
+                  placeholder="Eks. Jeg så en mørk silhuet følge efter mig fra busstoppestedet..."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Fortryd / Gem -->
+            <div class="form-subsection-actions">
+              <button type="reset" class="btn-link">Fortryd</button>
+              <button type="button" class="btn btn-secondary">Gem</button>
+            </div>
+          </section>
+
+          <!-- STOR INDSEND-KNAP -->
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">
+              <span>Indsend</span>
+              <span aria-hidden="true" class="btn-arrow">→</span>
+            </button>
+          </div>
+        </form>
       </section>
       <section id="form-summary">
         <h2>Summary</h2>
         <article>
           <p class="placeholder">Opsummering</p>
         </article>
+        <section id="debug-output" aria-live="polite"></section>
       </section>
     </main>
     <footer>
@@ -76,6 +230,6 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
   </body>
 </html>

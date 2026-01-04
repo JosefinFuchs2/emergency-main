@@ -1,0 +1,128 @@
+/* ============ CSS-ONLY MODALS VIA :target ============ */
+
+/* Skjult overlay som standard */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 999;
+}
+
+/* Vis når URL-fragment matcher (#popupX) */
+.modal:target {
+  display: block;
+}
+
+/* Klikbart overlay der lukker (link til #) */
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  content: "";
+  display: block;
+}
+
+/* Selve kortet – centreret over overlay */
+.popup-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(680px, 92vw);
+  max-height: min(80vh, 900px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--color-text, #111);
+  border-radius: var(--border-radius);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  z-index: 1; /* over overlay */
+}
+
+/* Header (titelbar) */
+.popup-head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: var(--color-headline-bg, #000);
+  color: var(--color-headline-text-page, #fff);
+  font-weight: var(--font-weight-medium, 700);
+  z-index: 1;
+}
+.popup-head h2 {
+  margin: 0;
+  font-size: clamp(1rem, 2.3vw, 1.15rem);
+}
+
+/* Luk-knap (link tilbage til #) */
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 2px solid #ffffffcc;
+  background: #fff;
+  color: var(--color-headline-bg, #2f59d3);
+  font-size: 18px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popup-close:hover {
+  background: #f1f4ff;
+}
+
+/* Body */
+.popup-body {
+  overflow: auto;
+  padding: 1rem 1.25rem 1.25rem;
+  font-size: clamp(0.95rem, 1.9vw, 1rem);
+  line-height: 1.55;
+}
+
+/* Billede */
+.popup-figure {
+  margin: 0.25rem 0 1rem;
+}
+.popup-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 55vh; /* justér efter smag */
+  object-fit: contain; /* vis hele billedet */
+  border-radius: calc(var(--border-radius) - 4px);
+  display: block;
+}
+
+/* Lister */
+.popup-body ul {
+  margin: 0.5rem 0 1rem 1.25rem;
+  padding: 0;
+}
+.popup-body li {
+  margin: 0.25rem 0;
+}
+
+/* Mobil */
+@media (max-width: 420px) {
+  .popup-card {
+    width: 94vw;
+    max-height: 86vh;
+  }
+  .popup-body {
+    padding: 0.85rem 0.9rem 1rem;
+  }
+  .popup-close {
+    top: 6px;
+    right: 6px;
+  }
+}

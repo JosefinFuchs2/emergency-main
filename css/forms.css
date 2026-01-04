@@ -30,3 +30,177 @@
   margin: 0 0 1.2rem 0;
   padding: 0;
 }
+/* ============ NY FORM LAYOUT & STYLING ============ */
+
+#webform {
+  max-width: 760px;
+  margin: 2rem auto 3rem;
+  padding: 2rem 2.5rem 2.5rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* sort bar med H2 */
+.form-title-bar {
+  background-color: var(--color-headline-bg);
+  color: var(--color-headline-text-page);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  margin: -2rem -2.5rem 1.5rem;
+}
+.form-title-bar h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+}
+
+/* generelle felter */
+.form-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row--3 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.form-row--split {
+  grid-template-columns: minmax(180px, 2fr) minmax(220px, 3fr);
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.form-control--inline legend {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-control--full textarea {
+  min-height: 5.5rem;
+}
+
+/* inputs & textarea */
+.form-control input,
+.form-control textarea {
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 2px;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* radioknapper */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.3rem;
+}
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+/* lys blå “kort”-sektion */
+.form-subsection {
+  margin-top: 0.5rem;
+  padding: 1.5rem 1.8rem 1.3rem;
+  background-color: #dde5f8;
+  border-radius: var(--border-radius);
+  display: grid;
+  gap: 1rem;
+}
+.form-subsection h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Fortryd / Gem */
+.form-subsection-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+/* knapper */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-color: var(--btn-secondary-border);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* stor Indsend-knap */
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+.btn-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* responsiv */
+@media (max-width: 600px) {
+  #webform {
+    margin: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1.3rem 2rem;
+  }
+
+  .form-title-bar {
+    margin: -1.5rem -1.3rem 1.2rem;
+  }
+
+  .form-row--split {
+    grid-template-columns: 1fr;
+  }
+
+  .form-subsection-actions {
+    justify-content: space-between;
+  }
+}
