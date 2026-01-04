@@ -66,4 +66,61 @@
   --color-info-bg: #1e62d0; /* nærkontaktside bokse */
   --color-infobox-1-bg: #c8daf0; /* nærkontaktside info-box farve */
   --color-infobox-2-bg: #ff691f; /* nærkontaktside info-box farve */
+
+  /* Formular-farver (NYT) */
+  --form-background-color: #ffffff;
+  --info-background-color: #f2f5ff;
+  --headline-bg-color-inverted: var(--color-headline-bg);
+  --headline-color-inverted: var(--color-headline-text-page);
+
+  --input-bg-color: #e6ebfa;
+  --input-border-color: #d2d8f0;
+
+  --btn-primary-bg: #1e62d0;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-border: #1e62d0;
+  --btn-secondary-text: #1e62d0;
+}
+/* ============================
+   DARK MODE
+   ============================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Sidebaggrund */
+    --color-bg: #1c1c1e;
+
+    /* Header + menu */
+    --color-head-bg: #1e62d0;
+    --color-menu-bg: #0041ad;
+
+    /* Tekst */
+    --color-text: #f5f5f5;
+    --color-text-inverted: #cccccc;
+
+    /* Cards */
+    --color-card-bg: #1c1c1e;
+    --color-news-bg: #1c1c1e;
+    --color-news-bg-inverted: #000000;
+
+    /* Infografik */
+    --color-info-bg: #1c1c1e;
+    --color-infobox-1-bg: #0041ad;
+    --color-infobox-2-bg: #ff5500;
+
+    /* Formular */
+    --form-background-color: #1c1c1e;
+    --info-background-color: #000000;
+
+    --input-bg-color: #707070;
+    --input-border-color: #7b96de;
+
+    /* Knapper */
+    --btn-primary-bg: #1e62d0;
+    --btn-primary-text: #ffffff;
+
+    --btn-secondary-bg: transparent;
+    --btn-secondary-border: #ffffff;
+    --btn-secondary-text: #ffffff;
+  }
 }
